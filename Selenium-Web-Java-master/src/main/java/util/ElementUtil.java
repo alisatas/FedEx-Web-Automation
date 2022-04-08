@@ -29,10 +29,12 @@ public class ElementUtil {
         logger.info("' " + continueBtn + " '" + " => Element clicked");
     }
 
-    public void clickElement(By element) {
+    public void clickElement(By element) throws InterruptedException {
         WebElement element1 = driver.findElement(element);
         element1.click();
         logger.info("' " + element1 + " '" + " => Element clicked");
+        Thread.sleep(2000);
+
 
     }
 
@@ -130,7 +132,7 @@ public class ElementUtil {
     }
 
     public void sendKey(By element, String text) {
-        findElement(element).sendKeys(text);
+        findElement(element).sendKeys(text+Keys.ENTER);
         logger.info("Text is written");
     }
 }

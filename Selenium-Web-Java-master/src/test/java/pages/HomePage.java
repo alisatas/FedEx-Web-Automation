@@ -4,8 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import util.ElementUtil;
 
-import static org.junit.Assert.assertTrue;
-
 public class HomePage {
 
     private WebDriver driver;
@@ -19,6 +17,10 @@ public class HomePage {
     private By text_botAnswer = By.cssSelector(".nw_Welcome");
     private By text_sendMessageArea = By.cssSelector(".nw_UserInputField");
     private By text_firstCustomerMessage = By.xpath("(//*[@class='nw_UserSays'])[1]");
+    private By button_submit = By.cssSelector(".nw_UserSubmit");
+    private By button_searchIcon=By.xpath("(//*[@alt='Search'])[1]");
+        private By text_searchArea=By.id("fxg-search-text");
+    private By text_searchText=By.xpath("(//*[@class='search-text'])[2]");
 
 
     public HomePage(WebDriver driver) {
@@ -62,11 +64,11 @@ public class HomePage {
         elementUtil.getText(text_botAnswer, answer);
     }
 
-    public void acceptCookiesPopUp() {
+    public void acceptCookiesPopUp() throws InterruptedException {
         elementUtil.clickElement(button_acceptCookies);
     }
 
-    public void closePopUp() {
+    public void closePopUp() throws InterruptedException {
         elementUtil.clickElement(button_closePopUp);
     }
 
@@ -76,5 +78,29 @@ public class HomePage {
 
     public void controlSentMessage(String controlMessage) {
         elementUtil.getText(text_firstCustomerMessage, controlMessage);
+    }
+
+    public void clickSubmitButton() throws InterruptedException {
+        elementUtil.clickElement(button_submit);
+    }
+
+    public void searchButtonDisplayed(String searchButtonDisplayed) {
+        elementUtil.elementIsDisplayed(button_searchIcon,searchButtonDisplayed);
+    }
+
+    public void searchAreaDisplayed(String searchArea) {
+        elementUtil.elementIsDisplayed(text_searchArea,searchArea);
+    }
+
+    public void searchWordSearchingArea(String trackingID) {
+        elementUtil.sendKey(text_searchArea,trackingID);
+    }
+
+    public void controlSearchedText(String searchedID) {
+        elementUtil.getText(text_searchText,searchedID);
+    }
+
+    public void clickSearchButton() throws InterruptedException {
+        elementUtil.clickElement(button_searchIcon);
     }
 }

@@ -15,18 +15,21 @@ public class HomePageSteps {
 
     @Then("User expect the title of the page contains {string}")
     public void iExpectTheTitleOfThePageContains(String title) throws InterruptedException {
-        homePage.checkURLContains(title);}
+        homePage.checkURLContains(title);
+    }
 
     @Given("^\"([^\"]*)\" wait milliseconds$")
-    public void waitMilliseconds(long waitMilliseconds) { homePage.waitByMilliSeconds(waitMilliseconds);}
+    public void waitMilliseconds(long waitMilliseconds) {
+        homePage.waitByMilliSeconds(waitMilliseconds);
+    }
 
     @Given("User expect element {string} displayed")
     public void userExpectElementDisplayed(String key) {
         homePage.elementDisplayed(key);
-        }
+    }
 
     @When("User clicks {string} button")
-    public void userClicksButton(String loginButton){
+    public void userClicksButton(String loginButton) {
         homePage.clickLoginButton(loginButton);
     }
 
@@ -36,7 +39,9 @@ public class HomePageSteps {
     }
 
     @And("User clicks loginIn {string} button")
-    public void userClicksLoginInButton(String loginAsFirstOption){ homePage.clickLoginButtonAsFirstOption(loginAsFirstOption); }
+    public void userClicksLoginInButton(String loginAsFirstOption) {
+        homePage.clickLoginButtonAsFirstOption(loginAsFirstOption);
+    }
 
     @Given("User expect to see {string} chatbot")
     public void userExpectToSeeChatbot(String chatBot) {
@@ -44,7 +49,9 @@ public class HomePageSteps {
     }
 
     @When("User click {string} chat bot")
-    public void userClickChatBot(String clickChatBot) { homePage.clickChatBot(clickChatBot);}
+    public void userClickChatBot(String clickChatBot) {
+        homePage.clickChatBot(clickChatBot);
+    }
 
     @Then("User expect to see {string} assistant answer")
     public void userExpectToSeeAssistantAnswer(String answer) {
@@ -52,10 +59,14 @@ public class HomePageSteps {
     }
 
     @When("User accept cookies")
-    public void userAcceptCookies() { homePage.acceptCookiesPopUp();}
+    public void userAcceptCookies() throws InterruptedException {
+        homePage.acceptCookiesPopUp();
+    }
 
     @When("User clicks close button for popUP")
-    public void userClicksCloseButtonForPopUP() { homePage.closePopUp(); }
+    public void userClicksCloseButtonForPopUP() throws InterruptedException {
+        homePage.closePopUp();
+    }
 
     @And("User writes text to assistant {string}")
     public void userWritesTextToAssistant(String sendMessage) {
@@ -65,6 +76,36 @@ public class HomePageSteps {
     @Then("User controls if text is sent {string}")
     public void userControlsIfTextIsSent(String controlMessage) {
         homePage.controlSentMessage(controlMessage);
+    }
+
+    @And("User click submit button")
+    public void userClickSubmitButton() throws InterruptedException {
+        homePage.clickSubmitButton();
+    }
+
+    @Given("User expect element search button {string} displayed")
+    public void userExpectElementSearchButtonDisplayed(String searchButtonDisplayed) {
+        homePage.searchButtonDisplayed(searchButtonDisplayed);
+    }
+
+    @And("User expect element search area text {string} displayed")
+    public void userExpectElementSearchAreaTextDisplayed(String searchArea) {
+        homePage.searchAreaDisplayed(searchArea);
+    }
+
+    @When("User writes text {string} to search area")
+    public void userWritesTextToSearchArea(String trackingID) {
+        homePage.searchWordSearchingArea(trackingID);
+    }
+
+    @Then("User controls if searched text {string} is on page")
+    public void userControlsIfSearchedTextIsOnPage(String searchedID) {
+        homePage.controlSearchedText(searchedID);
+    }
+
+    @When("User click searchICon")
+    public void userClickSearchICon() throws InterruptedException {
+        homePage.clickSearchButton();
     }
 }
 
