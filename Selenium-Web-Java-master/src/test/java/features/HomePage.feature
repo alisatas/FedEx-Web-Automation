@@ -25,6 +25,15 @@ Feature: Controlling login page test cases
     Given "2000" wait milliseconds
     Then User expect to see "Hello, I'm the FedEx Virtual Assistant. I'm here to help you with your questions regarding FedEx services." assistant answer
 
+  @sendindTextToBot
+  Scenario: User tries to send answer to assistant bot
+    When User click "chatBot" chat bot
+    And User expect to see "Hello, I'm the FedEx Virtual Assistant. I'm here to help you with your questions regarding FedEx services." assistant answer
+    And User writes text to assistant "Hi I need help"
+    Then User controls if text is sent "Hi I need help"
+
+
+
 
 
 

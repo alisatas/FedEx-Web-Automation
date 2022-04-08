@@ -57,5 +57,14 @@ public class HomePageSteps {
     @When("User clicks close button for popUP")
     public void userClicksCloseButtonForPopUP() { homePage.closePopUp(); }
 
+    @And("User writes text to assistant {string}")
+    public void userWritesTextToAssistant(String sendMessage) {
+        homePage.sendMessageToBot(sendMessage);
+    }
+
+    @Then("User controls if text is sent {string}")
+    public void userControlsIfTextIsSent(String controlMessage) {
+        homePage.controlSentMessage(controlMessage);
+    }
 }
 
