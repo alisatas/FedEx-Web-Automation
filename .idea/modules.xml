@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/FedExWebAutomation.iml" filepath="$PROJECT_DIR$/.idea/FedExWebAutomation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Selenium-Web-Java-master/Java-Selenium.iml" filepath="$PROJECT_DIR$/Selenium-Web-Java-master/Java-Selenium.iml" />
+    </modules>
+  </component>
+</project>
