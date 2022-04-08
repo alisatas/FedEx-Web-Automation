@@ -44,15 +44,15 @@
 #      | test@domaincom              | Both user ID and password are required to log in. |
 #      | ab(c)defgi[j\k]l;!          | Both user ID and password are required to log in. |
 #
-#     @CorrectUserNamePasswordd
-#     Scenario: enter correct password and email
-#       Given User write "testuserfedex@gmail.com" Id to Id area
-#       Given User write "123123Tek" password to password area
-#       And User clicks "loginIn" button to login
-#       And "6000" wait milliseconds
-#       And user click "remind me later" button
-#       #There are an error on website thats why last THEN steps doesnt work
-#       Then User expect to see name "FF" placed loginButton
+#  @CorrectUserNamePasswordd
+#  Scenario: enter correct password and email
+#    Given User write "testuserfedex@gmail.com" Id to Id area
+#    Given User write "123123Tek" password to password area
+#    And User clicks "loginIn" button to login
+#    And "6000" wait milliseconds
+#    And user click "remind me later" button
+#    #There are an error on website thats why last THEN steps doesnt work
+#    Then User expect to see name "FF" placed loginButton
 #
 #
 #

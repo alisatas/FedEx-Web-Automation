@@ -20,16 +20,16 @@ public class LoginPageSteps {
     }
 
     @Given("User expect the title of the login page url contains {string}")
-    public void userExpectTheTitleOfTheLoginPageContains(String url) throws InterruptedException { loginPage.checkLoginPageURL(url);}
+    public void userExpectTheTitleOfTheLoginPageContains(String url) throws InterruptedException {loginPage.checkLoginPageURL(url);}
 
     @Given("User expect element {string} link displayed")
     public void userExpectElementCreateUserIdForExistingAccountLinkDisplayed(String existingaccount) {loginPage.createUserExistingAccount(existingaccount);}
 
     @When("User click {string} link")
-    public void userClickLink(String existingAccount) { loginPage.clickCreateExistingAccount(existingAccount); }
+    public void userClickLink(String existingAccount) {loginPage.clickCreateExistingAccount(existingAccount);}
 
     @Then("user expect the title of existing account url contains {string}")
-    public void userExpectTheTitleOfExistingAccountUrlContains(String existingAccountUrl) throws InterruptedException { loginPage.checkExistingAccountURL(existingAccountUrl); }
+    public void userExpectTheTitleOfExistingAccountUrlContains(String existingAccountUrl) throws InterruptedException {loginPage.checkExistingAccountURL(existingAccountUrl);}
 
     @Given("User expect element {string} id area exist")
     public void userExpectElementIdAreaExist(String idAreaDisplayed) {
@@ -37,7 +37,7 @@ public class LoginPageSteps {
     }
 
     @Given("User expect element {string} password area exist")
-    public void userExpectElementPasswordAreaExist(String passwordAreaDisplayed) { loginPage.checkPasswordAreaExist(passwordAreaDisplayed);}
+    public void userExpectElementPasswordAreaExist(String passwordAreaDisplayed) {loginPage.checkPasswordAreaExist(passwordAreaDisplayed);}
 
     @Given("User expect element {string} area exist")
     public void userExpectElementAreaExist(String rememberID) {
@@ -69,7 +69,7 @@ public class LoginPageSteps {
     }
 
     @Then("User expect to see name {string} placed loginButton")
-    public void userExpectToSeeNamePlacedLoginButton(String accountName) { loginPage.checkUserIDArea(accountName); }
+    public void userExpectToSeeNamePlacedLoginButton(String accountName) {loginPage.checkUserIDArea(accountName);}
 
     @And("User clicks {string} button to login")
     public void userClicksButtonToLogin(String loginButtonToLogin) {

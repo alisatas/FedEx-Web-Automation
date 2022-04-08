@@ -19,8 +19,11 @@ public class HomePage {
     private By text_firstCustomerMessage = By.xpath("(//*[@class='nw_UserSays'])[1]");
     private By button_submit = By.cssSelector(".nw_UserSubmit");
     private By button_searchIcon=By.xpath("(//*[@alt='Search'])[1]");
-        private By text_searchArea=By.id("fxg-search-text");
+    private By text_searchArea=By.id("fxg-search-text");
     private By text_searchText=By.xpath("(//*[@class='search-text'])[2]");
+    private By button_trackID=By.id("btnSingleTrack");
+    private By text_trackingID=By.xpath("//*[@name='trackingnumber']");
+    private By text_invalidMessage=By.cssSelector(".notification.notification--error");
 
 
     public HomePage(WebDriver driver) {
@@ -102,5 +105,21 @@ public class HomePage {
 
     public void clickSearchButton() throws InterruptedException {
         elementUtil.clickElement(button_searchIcon);
+    }
+
+    public void trackButtonIsDisplayed(String trackButton) {
+        elementUtil.elementIsDisplayed(button_trackID,trackButton);
+    }
+
+    public void writeInvalidTrackID(String invalidTrackID) {
+        elementUtil.sendKey(text_trackingID, invalidTrackID);
+    }
+
+    public void controlMessageForInvalid(String invalidMessage) {
+        elementUtil.getText(text_invalidMessage,invalidMessage);
+    }
+
+    public void clickTrackButton() throws InterruptedException {
+        elementUtil.clickElement(button_trackID);
     }
 }

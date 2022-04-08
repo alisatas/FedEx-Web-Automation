@@ -107,5 +107,25 @@ public class HomePageSteps {
     public void userClickSearchICon() throws InterruptedException {
         homePage.clickSearchButton();
     }
+
+    @Given("User expect element Track button {string} displayed")
+    public void userExpectElementTrackButtonDisplayed(String trackButton) {
+        homePage.trackButtonIsDisplayed(trackButton);
+    }
+
+    @When("user enter invalid {string} number to tracking")
+    public void userEnterInvalidNumberToTracking(String invalidTrackID) {
+        homePage.writeInvalidTrackID(invalidTrackID);
+    }
+
+    @Then("User expect to see warning message {string}")
+    public void userExpectToSeeWarningMessage(String invalidMessage) {
+        homePage.controlMessageForInvalid(invalidMessage);
+    }
+
+    @And("User clicks track button")
+    public void userClicksTrackButton() throws InterruptedException {
+        homePage.clickTrackButton();
+    }
 }
 
