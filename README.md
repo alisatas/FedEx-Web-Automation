@@ -1,4 +1,4 @@
-# FedExWebAutomationUpdated
+# FedEx Web Automation 
 
 ## Running Code
 * Right clicking to Single runner will run code for one browser and run whole feature files one by one.
