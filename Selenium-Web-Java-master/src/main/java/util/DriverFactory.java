@@ -30,18 +30,6 @@ public class DriverFactory {
         } else if (browser.equals("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             threadLocalDriver.set(new FirefoxDriver());
-        } else if (browser.equals("safari")) {
-            WebDriverManager.safaridriver().setup();
-            threadLocalDriver.set(new SafariDriver());
-        } else if (browser.equals("opera")) {
-            WebDriverManager.operadriver().setup();
-            threadLocalDriver.set(new OperaDriver());
-        } else if (browser.equals("edge")) {
-            WebDriverManager.edgedriver().setup();
-            threadLocalDriver.set(new EdgeDriver());
-        } else if (browser.equals("ie")) {
-            WebDriverManager.iedriver().setup();
-            threadLocalDriver.set(new InternetExplorerDriver());
         } else {
             System.out.println("Please pass the correct browser value: " + browser);
         }

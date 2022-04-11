@@ -71,10 +71,6 @@ public class ApplicationHooks {
     public void afterClass(ITestContext context) {
     }
 
-//    @AfterStep
-//    public void afterStep(Scenario scenario) {
-//    }
-
     @AfterTest
     public void afterTest(ITestContext context) {
     }

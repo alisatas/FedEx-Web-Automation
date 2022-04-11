@@ -24,8 +24,9 @@ public class ElementUtil {
         this.js = (JavascriptExecutor) driver;
     }
 
-    public void click(By element,String continueBtn) {
+    public void click(By element,String continueBtn) throws InterruptedException {
         findElement(element).click();
+        Thread.sleep(3000);
         logger.info("' " + continueBtn + " '" + " => Element clicked");
     }
 
@@ -34,31 +35,6 @@ public class ElementUtil {
         element1.click();
         logger.info("' " + element1 + " '" + " => Element clicked");
         Thread.sleep(2000);
-
-
-    }
-
-    public void checkUrl(String urlTitle) {
-        wait.until(ExpectedConditions.urlToBe(urlTitle));
-        System.out.println("Actual Url " + urlTitle);
-        logger.info("' " + urlTitle + " '" + " => URL");
-    }
-
-    public void clickTextContains(By element, String text) {
-        boolean check = false;
-        List<WebElement> elements = findElements(element);
-        for (WebElement elem : elements) {
-            if (elem.getText().contains(text)) {
-                elem.click();
-                logger.info("' " + elem + " '" + " => Clicked text");
-                check = true;
-                break;
-            }
-        }
-        if (check == false) {
-            Assert.fail("Text couldn't found");
-            logger.info( " => Text could't found");
-        }
     }
 
     public WebElement findElement(By element) {
@@ -96,10 +72,6 @@ public class ElementUtil {
         logger.info("' " + key + " ' " + " ' " + key + " '" + " => Is displayed element");
     }
 
-    public void acceptCookies() {
-        driver.manage().deleteAllCookies();
-        logger.info("' " + " '" + " => Deleted all cookies");
-    }
 
     public void checkURLContains(String expectedURL) throws InterruptedException {
         Thread.sleep(1000);

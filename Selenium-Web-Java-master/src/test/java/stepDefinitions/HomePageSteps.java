@@ -13,7 +13,7 @@ public class HomePageSteps {
     private HomePage homePage = new HomePage(DriverFactory.getDriver());
     private LoginPage loginPage = new LoginPage(DriverFactory.getDriver());
 
-    @Then("User expect the title of the page contains {string}")
+    @Then("User expects the title of the page contains {string}")
     public void iExpectTheTitleOfThePageContains(String title) throws InterruptedException {
         homePage.checkURLContains(title);
     }
@@ -23,13 +23,13 @@ public class HomePageSteps {
         homePage.waitByMilliSeconds(waitMilliseconds);
     }
 
-    @Given("User expect element {string} displayed")
+    @Given("User expects element {string} displayed")
     public void userExpectElementDisplayed(String key) {
         homePage.elementDisplayed(key);
     }
 
     @When("User clicks {string} button")
-    public void userClicksButton(String loginButton) {
+    public void userClicksButton(String loginButton) throws InterruptedException {
         homePage.clickLoginButton(loginButton);
     }
 
@@ -39,26 +39,26 @@ public class HomePageSteps {
     }
 
     @And("User clicks loginIn {string} button")
-    public void userClicksLoginInButton(String loginAsFirstOption) {
+    public void userClicksLoginInButton(String loginAsFirstOption) throws InterruptedException {
         homePage.clickLoginButtonAsFirstOption(loginAsFirstOption);
     }
 
-    @Given("User expect to see {string} chatbot")
+    @Given("User expects to see {string} chatbot")
     public void userExpectToSeeChatbot(String chatBot) {
         homePage.chatBotDisplayed(chatBot);
     }
 
-    @When("User click {string} chat bot")
-    public void userClickChatBot(String clickChatBot) {
+    @When("User clicks {string} chat bot")
+    public void userClickChatBot(String clickChatBot) throws InterruptedException {
         homePage.clickChatBot(clickChatBot);
     }
 
-    @Then("User expect to see {string} assistant answer")
+    @Then("User expects to see {string} assistant answer")
     public void userExpectToSeeAssistantAnswer(String answer) {
         homePage.checkAnswerContains(answer);
     }
 
-    @When("User accept cookies")
+    @When("User accepts cookies")
     public void userAcceptCookies() throws InterruptedException {
         homePage.acceptCookiesPopUp();
     }
@@ -73,22 +73,22 @@ public class HomePageSteps {
         homePage.sendMessageToBot(sendMessage);
     }
 
-    @Then("User controls if text is sent {string}")
+    @Then("User checks if text is sent {string}")
     public void userControlsIfTextIsSent(String controlMessage) {
         homePage.controlSentMessage(controlMessage);
     }
 
-    @And("User click submit button")
+    @And("User clicks submit button")
     public void userClickSubmitButton() throws InterruptedException {
         homePage.clickSubmitButton();
     }
 
-    @Given("User expect element search button {string} displayed")
+    @Given("User expects element search button {string} displayed")
     public void userExpectElementSearchButtonDisplayed(String searchButtonDisplayed) {
         homePage.searchButtonDisplayed(searchButtonDisplayed);
     }
 
-    @And("User expect element search area text {string} displayed")
+    @And("User expects element search area text {string} displayed")
     public void userExpectElementSearchAreaTextDisplayed(String searchArea) {
         homePage.searchAreaDisplayed(searchArea);
     }
@@ -98,27 +98,27 @@ public class HomePageSteps {
         homePage.searchWordSearchingArea(trackingID);
     }
 
-    @Then("User controls if searched text {string} is on page")
+    @Then("User checks if searched text {string} is on page")
     public void userControlsIfSearchedTextIsOnPage(String searchedID) {
         homePage.controlSearchedText(searchedID);
     }
 
-    @When("User click searchICon")
+    @When("User clicks searchICon")
     public void userClickSearchICon() throws InterruptedException {
         homePage.clickSearchButton();
     }
 
-    @Given("User expect element Track button {string} displayed")
+    @Given("User expects element Track button {string} displayed")
     public void userExpectElementTrackButtonDisplayed(String trackButton) {
         homePage.trackButtonIsDisplayed(trackButton);
     }
 
-    @When("user enter invalid {string} number to tracking")
+    @When("user enters invalid {string} number to tracking")
     public void userEnterInvalidNumberToTracking(String invalidTrackID) {
         homePage.writeInvalidTrackID(invalidTrackID);
     }
 
-    @Then("User expect to see warning message {string}")
+    @Then("User expects to see warning message {string}")
     public void userExpectToSeeWarningMessage(String invalidMessage) {
         homePage.controlMessageForInvalid(invalidMessage);
     }

@@ -27,14 +27,11 @@ public class LoginPage {
 
     public void enterUserPassword(String enterPassowrID) {elementUtil.getText(text_enterUserIDPassword, enterPassowrID);}
 
-    public void checkLoginPageURL(String url) throws InterruptedException {
-        Thread.sleep(5000);
-        elementUtil.checkURLContains(url);
-    }
+    public void checkLoginPageURL(String url) throws InterruptedException {Thread.sleep(5000);elementUtil.checkURLContains(url);}
 
     public void createUserExistingAccount(String existingaccount) {elementUtil.elementIsDisplayed(link_createUserExistingAcount, existingaccount);}
 
-    public void clickCreateExistingAccount(String existingAccount) {elementUtil.click(link_createUserExistingAcount, existingAccount);}
+    public void clickCreateExistingAccount(String existingAccount) throws InterruptedException {elementUtil.click(link_createUserExistingAcount, existingAccount);}
 
     public void checkExistingAccountURL(String existingAccountUrl) throws InterruptedException {elementUtil.checkURLContains(existingAccountUrl);}
 
@@ -48,7 +45,7 @@ public class LoginPage {
         elementUtil.elementIsDisplayed(button_login, loginButton);
     }
 
-    public void clickToLoginButton(String clickLogin) {elementUtil.click(button_login, clickLogin);}
+    public void clickToLoginButton(String clickLogin) throws InterruptedException {elementUtil.click(button_login, clickLogin);}
 
     public void checkWarningMessageLoginArea(String checkMessage) {elementUtil.getText(warningMessageLoginPage, checkMessage);}
 
@@ -58,13 +55,11 @@ public class LoginPage {
 
     public void writeId(String writeId) {elementUtil.sendKey(text_userId, writeId);}
 
-    public void clickRemindMeLater(String remindMeLater) {elementUtil.click(button_remindMeLater, remindMeLater);}
+    public void clickRemindMeLater(String remindMeLater) throws InterruptedException {elementUtil.click(button_remindMeLater, remindMeLater);}
 
     public void checkUserIDArea(String accountName) {
         elementUtil.getText(button_userIDArea, accountName);
     }
 
-    public void succesfullLogin(String loginButtonToLogin) {
-        elementUtil.click(button_login, loginButtonToLogin);
-    }
+    public void succesfullLogin(String loginButtonToLogin) throws InterruptedException {elementUtil.click(button_login, loginButtonToLogin);}
 }
